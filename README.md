@@ -59,7 +59,7 @@ Desarrollar una aplicación que implemente un algoritmo para encontrar la ruta �
 
 # **Proyecto Final - Estructura de Datos**
 
-## **Carátula**
+
 ![Logo de la Universidad](https://github.com/Jona142004/Proyecto-FInal/blob/main/logo_ups.png?raw=true)
 
 
