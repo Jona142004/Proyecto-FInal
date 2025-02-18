@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 
-import controllers.Mazesolver;
+import controllers.MazeSolver;
 import models.Cell;
 import models.Maze;
 
-public class DFSController implements Mazesolver {
+public class DFSController implements MazeSolver {
 
     @Override
     public List<Cell> getPath(Maze maze, boolean[][] grid, Cell start, Cell end) {

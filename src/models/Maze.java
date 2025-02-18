@@ -17,7 +17,7 @@ public class Maze {
             Arrays.fill(grid[i], true);
         }
     }
-
+    
     // Constructor con laberinto predefinido
     public Maze(boolean[][] predefinedGrid) {
         this.size = predefinedGrid.length;

@@ -6,11 +6,11 @@ import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
 
-import controllers.Mazesolver;
+import controllers.MazeSolver;
 import models.Cell;
 import models.Maze;
 
-public class BFSController implements Mazesolver {
+public class BFSController implements MazeSolver {
 
     @Override
     public List<Cell> getPath(Maze maze,boolean[][] grid, Cell start, Cell end) {

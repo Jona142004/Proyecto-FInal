@@ -9,7 +9,7 @@ import java.util.Set;
 import models.Cell;
 import models.Maze;
 
-public class RecursiveController implements Mazesolver {
+public class RecursiveController implements MazeSolver {
 
     @Override
     public List<Cell> getPath(Maze maze,boolean[][] grid, Cell start, Cell end) {

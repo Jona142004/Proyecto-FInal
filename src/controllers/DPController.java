@@ -7,11 +7,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import controllers.Mazesolver;
+import controllers.MazeSolver;
 import models.Cell;
 import models.Maze;
 
-public class DPController implements Mazesolver {
+public class DPController implements MazeSolver {
     private Map<Cell, Boolean> memoria = new HashMap<>();
 
     @Override
