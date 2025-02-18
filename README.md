@@ -60,7 +60,8 @@ Desarrollar una aplicación que implemente un algoritmo para encontrar la ruta �
 # **Proyecto Final - Estructura de Datos**
 
 ## **Carátula**
-![Logo de la Universidad](file-DLYmp2aYticWhBFG2T2wnq)
+![Logo de la Universidad](https://github.com/Jona142004/Proyecto-FInal/blob/main/logo_ups.png?raw=true)
+
 
 - **Universidad:** Universidad Politécnica Salesiana
 - **Carrera:** Ingeniería en Ciencias de la Computación
