@@ -46,7 +46,7 @@ public class BFSController implements MazeSolver {
             return false;
         }
         visitadas.add(cell);
-        maze.updateMaze(cell,start,end);
+        //maze.updateMaze(cell,start,end);
 
         //Explorar direcciones
         if (row == end.row && col == end.col) {
