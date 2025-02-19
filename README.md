@@ -67,6 +67,8 @@ Desarrollar una aplicación que implemente un algoritmo para encontrar la ruta �
 - **Carrera:** Ingeniería en Ciencias de la Computación
 - **Asignatura:** Estructura de Datos
 - **Estudiante:** Jonnathan Parraga ([jparragar1@est.ups.edu.ec](mailto:jparragar1@est.ups.edu.ec))
+- **Estudiante:** María Verónica Cobos Arévalo ([mcobosa@est.ups.edu.ec] (mailto:mcobosa@est.ups.edu.ec))
+- **Estudiante:** Dayanna Carolina Fortmann Sánchez ([dfortmann@est.ups.edu.ec] (mailto:dfortmann@est.ups.edu.ec))
 - **Docente:** Ing. Pablo Torres
 
 ---
@@ -79,14 +81,14 @@ El proyecto consiste en la implementación de un algoritmo para encontrar la rut
 ## **Propuesta de Solución**
 
 ### **Marco Teórico**
-- **Programación Dinámica:** Técnica de optimización que permite reducir el tiempo de ejecución almacenando resultados intermedios.
-- **BFS (Breadth-First Search):** Algoritmo de búsqueda en anchura que encuentra el camino más corto en grafos no ponderados.
-- **DFS (Depth-First Search):** Algoritmo de búsqueda en profundidad que explora todas las posibilidades antes de retroceder.
+- **Programación Dinámica:** Técnica de optimización que permite reducir el tiempo de ejecución almacenando resultados intermedios. Fue desarrollado por Richard Bellman, matemático y economista. El planteamiento de Bellman para estos problemas consistía en dividirlos en subproblemas más pequeños y resolver los subproblemas del más pequeño al más grande. Después almacenaba los resultados de los subproblemas y los reutilizaba para resolver subproblemas más grandes. Esta es la idea principal de la programación dinámica.
+- **BFS (Breadth-First Search):** Es un algoritmo de recorrido de grafos que explora los vértices de un Grafo en niveles, visitando todos los vértices a una distancia 'd' del vértice origen antes de visitar los vértices a una distancia 'd+1'. El algoritmo BFS puede ser aplicado a grafos dirigidos o no dirigidos, y se utiliza en una variedad de aplicaciones, como encontrar el camino más corto en un grafo no ponderado, determinar la conectividad de un grafo o realizar búsquedas en estructuras de datos jerárquicas como árboles y redes sociales.
+- **DFS (Depth-First Search):** Es un algoritmo de recorrido de Grafo que explora el grafo siguiendo un camino desde el vértice origen hasta llegar a un vértice sin vecinos no visitados. Cuando se encuentra un vértice sin vecinos no visitados, el algoritmo retrocede a lo largo del camino hasta encontrar un vértice con vecinos no visitados y continúa la exploración desde allí. El proceso se repite hasta que se visitan todos los vértices alcanzables desde el vértice origen.
 
 ### **Descripción de la Solución**
 - **Lenguaje de Programación:** Java
 - **Interfaz gráfica:** Implementada con **JFrame** en Java.
-- **Patrón de Diseño:** **Modelo-Vista-Controlador (MVC)** para organizar mejor el código.
+- **Patrón de Diseño:** **Modelo-Vista-Controlador (MVC)**  Herramienta útil para un proyecto organizado, separa la interfaz de usuario, los datos y la lógica de la aplicación.
 - **Estructuras de Datos Utilizadas:**
   - **Matriz:** Para representar el laberinto.
   - **Listas y Pilas:** Para almacenar y explorar rutas posibles.
@@ -94,23 +96,26 @@ El proyecto consiste en la implementación de un algoritmo para encontrar la rut
 
 ### **Participación de los Integrantes**
 - **Jonnathan Parraga:** Desarrollo del modelo y controlador, implementación de BFS y DFS, y documentación del proyecto.
-- **[Otros integrantes]**: [Detalles de sus contribuciones]
+- **Verónica Cobos:** Desarrollo de métodos implementados dentro de los botones, implementación de DPController.
+- **Carolina Fortmann:** Desarrollo de la Interfaz Gráfica, sus elementos y funcionamiento, implementación de DPController.
 
 ### **Capturas de Pantalla**
 _Agregar imágenes de la interfaz implementada_
-
 ---
 
 ## **Conclusiones**
-- Se implementaron y compararon diferentes estrategias de búsqueda para determinar la ruta más corta.
-- BFS resultó ser más eficiente para encontrar la ruta óptima en laberintos sin pesos.
-- DFS exploró más caminos pero no siempre encontró la mejor solución.
-- La programación dinámica permitió mejorar la eficiencia del algoritmo en algunos casos.
-- La organización con MVC facilitó la separación entre la lógica del laberinto y la interfaz gráfica.
+Este proyecto es una aplicación en Java que permite la generación y resolución de laberintos utilizando distintos algoritmos. A través de una interfaz gráfica intuitiva, el usuario puede definir el tamaño del laberinto, seleccionar un punto de inicio y un punto de fin, y elegir entre varios métodos de resolución para encontrar el camino óptimo.
+
+El sistema cuenta con cuatro algoritmos de búsqueda: BFS (Breadth-First Search), DFS (Depth-First Search), Recursivo y Programación Dinámica (DP), cada uno con sus propias estrategias para explorar el laberinto. Además, la aplicación permite comparar el desempeño de estos métodos en términos de tiempo de ejecución y número de pasos requeridos.
+
+Visualmente, el laberinto se representa con una cuadrícula donde las celdas pueden ser caminos transitables, paredes que bloquean el paso o parte del recorrido encontrado por los algoritmos. Los colores ayudan a diferenciar los elementos del laberinto: el inicio y el fin se marcan de manera distintiva, los caminos explorados se resaltan en verde, y los nodos visitados en rojo.
+
+Esta herramienta no solo facilita la experimentación con distintos algoritmos de búsqueda, sino que también sirve como un recurso educativo para comprender cómo funcionan en la práctica.
 
 ---
 
 ## **Recomendaciones**
+- Emplear el funcionamiento del Modelo-Vista-Controlador en futuras aplicaciones.
 - Refactorizar el código para mejorar la legibilidad y eficiencia.
 - Implementar pruebas automatizadas para verificar la validez de los algoritmos.
 - Optimizar la interfaz gráfica para hacerla más intuitiva y flexible.

@@ -178,7 +178,9 @@ public class MazeView extends JFrame {
             JOptionPane.showMessageDialog(this, "Seleccione inicio y fin antes de resolver.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-    
+        
+        limpiarRecorrido();
+
         boolean[][] grid = convertirGridABoolean(gridButtons);
         Maze maze = new Maze(grid);
         Cell startCell = new Cell(inicio.x, inicio.y);
@@ -233,8 +235,21 @@ public class MazeView extends JFrame {
             
         }).start();
     }
-    
 
+    private void limpiarRecorrido() {
+        if (gridButtons != null) {
+            for (int i = 0; i < gridButtons.length; i++) {
+                for (int j = 0; j < gridButtons[i].length; j++) {
+                    Color color = gridButtons[i][j].getBackground();
+                    if (color.equals(new Color(207, 55, 73)) || color.equals(new Color(53, 207, 87))) {
+                        gridButtons[i][j].setBackground(Color.WHITE);
+                    }
+                }
+            }
+        }
+    }
+    
+    
     // Método para convertir la matriz de botones en una matriz booleana
     private boolean[][] convertirGridABoolean(JButton[][] gridButtons) {
         int filas = gridButtons.length;
@@ -254,32 +269,37 @@ public class MazeView extends JFrame {
             JOptionPane.showMessageDialog(this, "Seleccione inicio y fin antes de comparar.", "Error", JOptionPane.ERROR_MESSAGE);
             return;
         }
-
+    
         boolean[][] grid = convertirGridABoolean(gridButtons);
         Maze maze = new Maze(grid);
         Cell startCell = new Cell(inicio.x, inicio.y);
         Cell endCell = new Cell(fin.x, fin.y);
-
+    
         Object[] controllers = {new BFSController(), new DFSController(), new DPController(), new RecursiveController()};
         String[] metodos = {"BFS", "DFS", "DP", "Recursivo"};
         StringBuilder resultado = new StringBuilder();
-
+    
         for (int i = 0; i < controllers.length; i++) {
             long startTime = System.nanoTime();
-            List<Cell> path = ((controllers[i] instanceof BFSController) ? ((BFSController) controllers[i]).getPath(maze, grid, startCell, endCell) :
-                                         (controllers[i] instanceof DFSController) ? ((DFSController) controllers[i]).getPath(maze, grid, startCell, endCell) :
-                                         (controllers[i] instanceof DPController) ? ((DPController) controllers[i]).getPath(maze, grid, startCell, endCell) :
-                                         ((RecursiveController) controllers[i]).getPath(maze, grid, startCell, endCell));
+    
+            List<Cell> path = null;
+            if (controllers[i] instanceof BFSController) 
+                path = ((BFSController) controllers[i]).getPath(maze, grid, startCell, endCell);
+            else if (controllers[i] instanceof DFSController) 
+                path = ((DFSController) controllers[i]).getPath(maze, grid, startCell, endCell);
+            else if (controllers[i] instanceof DPController) 
+                path = ((DPController) controllers[i]).getPath(maze, grid, startCell, endCell);
+            else 
+                path = ((RecursiveController) controllers[i]).getPath(maze, grid, startCell, endCell);
+    
             long endTime = System.nanoTime();
-            long duration = (endTime - startTime) / 1_000_000;
-
-            if (path != null) {
-                resultado.append(metodos[i]).append(" encontró el camino en ").append(duration).append(" ms y ").append(path.size()).append(" pasos.\n");
-            } else {
-                resultado.append(metodos[i]).append(" no encontró un camino.\n");
-            }
+            long duracion = (endTime - startTime) / 1_000; 
+    
+            resultado.append(metodos[i]).append(" encontró el camino en ")
+                     .append(duracion).append(" µs y ")
+                     .append((path != null ? path.size() : "N/A")).append(" pasos.\n");
         }
-
+    
         JOptionPane.showMessageDialog(this, resultado.toString(), "Comparación de Métodos", JOptionPane.INFORMATION_MESSAGE);
     }
     
