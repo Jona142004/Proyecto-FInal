@@ -1,7 +1,6 @@
 package models;
 
 import java.util.Arrays;
-import java.util.List;
 
 public class Maze {
     private boolean[][] grid;
@@ -40,7 +39,6 @@ public class Maze {
             displayGrid[current.getRow()][current.getCol()] = " > ";
         }
 
-        printMaze();
         try {
             Thread.sleep(200);
         } catch (InterruptedException e) {
@@ -50,16 +48,6 @@ public class Maze {
 
     public boolean[][] getGrid() {
         return grid;
-    }
-
-    public void printMaze() {
-        System.out.println("\nEstado actual del laberinto:");
-        for (String[] row : displayGrid) {
-            for (String cell : row) {
-                System.out.print(" " + cell + " ");
-            }
-            System.out.println();
-        }
     }
 
     public void configureMaze(int[][] obstacles) {
@@ -73,25 +61,4 @@ public class Maze {
         }
     }
 
-    public void printMazeWithPath(List<Cell> path) {
-        String[][] tempGrid = new String[size][size];
-
-        for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size; j++) {
-                tempGrid[i][j] = grid[i][j] ? " - " : " * ";
-            }
-        }
-
-        for (Cell cell : path) {
-            tempGrid[cell.getRow()][cell.getCol()] = " = ";
-        }
-
-        System.out.println("\nLaberinto con el camino encontrado:");
-        for (String[] row : tempGrid) {
-            for (String cell : row) {
-                System.out.print(" " + cell + " ");
-            }
-            System.out.println();
-        }
-    }
 }
