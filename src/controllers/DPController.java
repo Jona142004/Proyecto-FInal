@@ -1,29 +1,25 @@
 package controllers;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Map;
-import java.util.Set;
-
-import controllers.MazeSolver;
+import java.util.*;
 import models.Cell;
 import models.Maze;
 
 public class DPController implements MazeSolver {
     private Map<Cell, Boolean> memoria = new HashMap<>();
+    private List<Cell> visitedNodes = new ArrayList<>();
 
     @Override
     public List<Cell> getPath(Maze maze, boolean[][] grid, Cell start, Cell end) {
         List<Cell> path = new ArrayList<>();
         Set<Cell> visitadas = new HashSet<>();
-        //Set<Cell> recorrido = new Li
+        visitedNodes.clear();
+
         if (grid == null || grid.length == 0) {
             return path;
         }
-         // Inicializamos el conjunto de celdas visitadas
+
         if (findPath(grid, start.row, start.col, end, path, visitadas)) {
+            Collections.reverse(path);
             return path;
         }
 
@@ -46,6 +42,7 @@ public class DPController implements MazeSolver {
         }
 
         visitadas.add(cell);
+        visitedNodes.add(cell);
 
         if (row == end.row && col == end.col) {
             path.add(cell);
@@ -53,32 +50,21 @@ public class DPController implements MazeSolver {
             return true;
         }
 
-            
-        
-        if (row == end.row && col == end.col) {
-            path.add(cell);
+        if (findPath(grid, row + 1, col, end, path, visitadas) || 
+            findPath(grid, row, col + 1, end, path, visitadas) || 
+            findPath(grid, row - 1, col, end, path, visitadas) || 
+            findPath(grid, row, col - 1, end, path, visitadas)) {
+            path.add(cell); 
+            memoria.put(cell, true);
             return true;
         }
-        if (findPath(grid, row + 1, col, end, path,visitadas)) {
-            path.add(cell);
-            return true;
-        }
-        
-        if (findPath(grid, row, col + 1, end, path,visitadas)) {
-            path.add(cell);
-            return true;
-        }
-        if (findPath(grid, row , col -1, end, path,visitadas)) { //arriba
-            path.add(cell);
-            return true;
-        } 
-        if (findPath(grid, row -1 , col  , end, path,visitadas)) { //izquierda
-            path.add(cell);
-            return true;
-        }
-        
+
         visitadas.remove(cell);
         memoria.put(cell, false);
         return false;
+    }
+
+    public List<Cell> getVisitedNodes() {
+        return visitedNodes;
     }
 }

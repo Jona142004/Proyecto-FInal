@@ -1,79 +1,63 @@
 package controllers;
 
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.LinkedHashSet;
-import java.util.List;
-import java.util.Set;
-
-import controllers.MazeSolver;
+import java.util.*;
 import models.Cell;
 import models.Maze;
 
 public class BFSController implements MazeSolver {
-
+    private List<Cell> visitedNodes = new ArrayList<>();
+    
     @Override
-    public List<Cell> getPath(Maze maze,boolean[][] grid, Cell start, Cell end) {
-        System.out.println("Implementacion Recursiva");
-            List<Cell> path = new ArrayList<>();
-            Set<Cell> visitadas = new HashSet<>();
-            Set<Cell> recorrido = new LinkedHashSet<>();
+    public List<Cell> getPath(Maze maze, boolean[][] grid, Cell start, Cell end) {
+        List<Cell> path = new ArrayList<>();
+        Set<Cell> visitadas = new HashSet<>();
+        visitedNodes.clear();
 
-            if(grid == null || grid.length == 0){
+        if (grid == null || grid.length == 0) {
+            return path;
+        }
+
+        Queue<Cell> queue = new LinkedList<>();
+        Map<Cell, Cell> predecesores = new HashMap<>(); 
+
+        queue.add(start);
+        visitadas.add(start);
+        predecesores.put(start, null); 
+
+        while (!queue.isEmpty()) {
+            Cell current = queue.poll();
+            visitedNodes.add(current);
+            
+            if (current.equals(end)) {
+                while (current != null) {
+                    path.add(0, current); 
+                    current = predecesores.get(current);
+                }
                 return path;
             }
 
-            /*if(findPath(grid, start.row, start.col, end, path, visitadas)){
-                return path;
-            }  
             
-            return new ArrayList<>(); */
-            findPath(maze, grid, start.row, start.col, end, end, path, visitadas);
-            List<Cell> exploredList = new ArrayList<>(visitadas);
-            return path.isEmpty()? exploredList:path;
-            
+            for (int[] dir : new int[][] { { 1, 0 }, { 0, 1 }, { -1, 0 }, { 0, -1 } }) {
+                int newRow = current.row + dir[0];
+                int newCol = current.col + dir[1];
+                Cell vecino = new Cell(newRow, newCol);
 
-            
+                if (isValid(grid, newRow, newCol) && !visitadas.contains(vecino)) {
+                    queue.add(vecino);
+                    visitadas.add(vecino);
+                    predecesores.put(vecino, current); 
+                }
+            }
+        }
+
+        return null; 
     }
 
-    private boolean findPath(Maze maze, boolean[][] grid, int row, int col, Cell end, Cell start, List<Cell> path, Set<Cell> visitadas) {
-        Cell cell = new Cell(row, col);
-        if (row < 0 || col <0 || row >= grid.length || col>= grid[0].length || !grid[row] [col]) {
-            
-            return false;  
-        }
-        if (visitadas.contains(cell)) {
-            return false;
-        }
-        visitadas.add(cell);
-        //maze.updateMaze(cell,start,end);
-
-        //Explorar direcciones
-        if (row == end.row && col == end.col) {
-            path.add(cell);
-            return true;
-        }
-        if (findPath(maze, grid, row + 1, col, end, cell, path,visitadas)) {
-            path.add(cell);
-            return true;
-        }
-        
-        if (findPath(maze, grid, row, col + 1, end, cell, path,visitadas)) {
-            path.add(cell);
-            return true;
-        }
-        if (findPath(maze, grid, row , col -1, end, cell, path,visitadas)) { //arriba
-            path.add(cell);
-            return true;
-        } 
-        if (findPath(maze, grid, row -1 , col  , end, cell, path,visitadas)) { //izquierda
-            path.add(cell);
-            return true;
-        }
-        visitadas.remove(cell);
-        path.remove(cell);
-        return false;
-
+    public List<Cell> getVisitedNodes() {
+        return visitedNodes;
     }
-    
+
+    private boolean isValid(boolean[][] grid, int row, int col) {
+        return row >= 0 && col >= 0 && row < grid.length && col < grid[0].length && grid[row][col];
+    }
 }
