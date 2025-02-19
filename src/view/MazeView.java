@@ -235,23 +235,6 @@ public class MazeView extends JFrame {
             
         }).start();
     }
-
-    private void limpiarRecorrido() {
-        if (gridButtons != null) {
-            for (int i = 0; i < gridButtons.length; i++) {
-                for (int j = 0; j < gridButtons[i].length; j++) {
-                    // No limpiar el inicio ni el fin
-                    if (inicio != null && inicio.x == i && inicio.y == j) continue;
-                    if (fin != null && fin.x == i && fin.y == j) continue;
-    
-                    Color color = gridButtons[i][j].getBackground();
-                    if (color.equals(new Color(207, 55, 73)) || color.equals(new Color(53, 207, 87))) {
-                        gridButtons[i][j].setBackground(Color.WHITE);
-                    }
-                }
-            }
-        }
-    }
     
     
     // Método para convertir la matriz de botones en una matriz booleana
