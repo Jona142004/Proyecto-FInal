@@ -200,6 +200,7 @@ public class MazeView extends JFrame {
                 visitados = ((BFSController) solver).getVisitedNodes();
                 camino = ((BFSController) solver).getPath(maze, grid, startCell, endCell);
             } else if (solver instanceof DFSController) {
+                visitados = ((DFSController) solver).getVisitedNodes();
                 camino = ((DFSController) solver).getPath(maze, grid, startCell, endCell);
             } else if (solver instanceof DPController) {
                 visitados = ((DPController) solver).getVisitedNodes();

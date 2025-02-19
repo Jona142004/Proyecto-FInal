@@ -5,18 +5,21 @@ import models.Cell;
 import models.Maze;
 
 public class DFSController implements MazeSolver {
+    private List<Cell> visitedNodes = new ArrayList<>();
 
     @Override
     public List<Cell> getPath(Maze maze, boolean[][] grid, Cell start, Cell end) {
         Stack<Cell> stack = new Stack<>();
         Map<Cell, Cell> predecesores = new HashMap<>();
         List<Cell> path = new ArrayList<>();
+        visitedNodes.clear();
 
         stack.push(start);  
         predecesores.put(start, null);
 
         while (!stack.isEmpty()) {
-            Cell actual = stack.pop();  
+            Cell actual = stack.pop(); 
+            visitedNodes.add(actual);
 
             if (actual.equals(end)) {
                 while (actual != null) {
@@ -35,10 +38,15 @@ public class DFSController implements MazeSolver {
                 if (isValid(grid, newRow, newCol) && !predecesores.containsKey(vecino)) {
                     stack.push(vecino);  
                     predecesores.put(vecino, actual); 
+                    visitedNodes.add(vecino);  
                 }
             }
         }
         return new ArrayList<>();  
+    }
+
+    public List<Cell> getVisitedNodes() {
+        return visitedNodes;
     }
 
     private boolean isValid(boolean[][] grid, int row, int col) {
