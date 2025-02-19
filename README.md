@@ -20,7 +20,7 @@ Desarrollar una aplicación que implemente un algoritmo para encontrar la ruta �
 3. **Ejecutar y probar el código:** Validar el correcto funcionamiento con diferentes casos de prueba.
 4. **Generar el informe del proyecto:** Incluir toda la información relevante y capturas de pantalla de la implementación en este archivo README.md.
 5. **Subir el proyecto:** Realizar commit y push del código en un repositorio.
-   - Formato de versión: `x.x.x`
+   - Formato de versión: `1.0.0`
    - Mensaje de versión: `"Proyecto Final – Estructura de Datos"`
 6. **Cargar la URL del repositorio en el AVAC.**
 
@@ -106,6 +106,7 @@ El proyecto consiste en la implementación de un algoritmo para encontrar la rut
 La imagen muestra una interfaz gráfica diseñada con elementos incluidos en un JFrame, como JButton, JPanel y JTextField, que contribuyen a una apariencia atractiva y estética para el usuario. Esta interfaz permite crear un laberinto de tamaño personalizado, donde el usuario puede definir el punto de inicio, el destino y los obstáculos. 
 
 En la parte inferior, se encuentran los botones que permiten seleccionar el tipo de recorrido para resolver el laberinto. Además, se incluyen opciones para realizar un recorrido más rápido, reiniciar el laberinto y comparar el tiempo estimado de ejecución de cada método de resolución.
+
 ---
 ### **Metodo "BFS"**
 ![MetodoBFS-imagen](https://github.com/Jona142004/Proyecto-FInal/blob/main/bfs.png)
