@@ -167,16 +167,17 @@ Esta herramienta no solo facilita la experimentación con distintos algoritmos d
 
 ---
 
-## **Recomendaciones**
+## **Recomendaciones (por estudiante)**
 
+### **Cobos Verónica: **
 -Modularización del código: Implementar una estructura más clara basada en el patrón MVC (Modelo-Vista-Controlador) para mejorar la organización y mantenimiento del proyecto.
 
 -Refactorización del código: Optimizar la legibilidad y eficiencia del código eliminando redundancias y aplicando principios de diseño adecuados.
-
+### **Fortmann Carolina: **
 -Pruebas automatizadas: Implementar pruebas unitarias para verificar la validez de los algoritmos y garantizar su correcto funcionamiento.
 
 -Mejoras en la interfaz gráfica: Hacerla más intuitiva y flexible, permitiendo una mejor experiencia de usuario.
-
+### **Parraga Jonnathan: **
 -Exploración de otros algoritmos: Incorporar técnicas avanzadas como A* o Dijkstra para mejorar la búsqueda de rutas óptimas.
 
 -Aplicación en otros ámbitos: Extender esta solución a áreas como robótica e inteligencia artificial para problemas de navegación y optimización.
@@ -194,6 +195,4 @@ Esta herramienta no solo facilita la experimentación con distintos algoritmos d
 
 ## **Docente**
 **Ing. Pablo Torres**
-
-
 
