@@ -84,7 +84,10 @@ El proyecto consiste en la implementación de un algoritmo para encontrar la rut
 - **Programación Dinámica:** Técnica de optimización que permite reducir el tiempo de ejecución almacenando resultados intermedios. Fue desarrollado por Richard Bellman, matemático y economista. El planteamiento de Bellman para estos problemas consistía en dividirlos en subproblemas más pequeños y resolver los subproblemas del más pequeño al más grande. Después almacenaba los resultados de los subproblemas y los reutilizaba para resolver subproblemas más grandes. Esta es la idea principal de la programación dinámica.
 - **BFS (Breadth-First Search):** Es un algoritmo de recorrido de grafos que explora los vértices de un Grafo en niveles, visitando todos los vértices a una distancia 'd' del vértice origen antes de visitar los vértices a una distancia 'd+1'. El algoritmo BFS puede ser aplicado a grafos dirigidos o no dirigidos, y se utiliza en una variedad de aplicaciones, como encontrar el camino más corto en un grafo no ponderado, determinar la conectividad de un grafo o realizar búsquedas en estructuras de datos jerárquicas como árboles y redes sociales.
 - **DFS (Depth-First Search):** Es un algoritmo de recorrido de Grafo que explora el grafo siguiendo un camino desde el vértice origen hasta llegar a un vértice sin vecinos no visitados. Cuando se encuentra un vértice sin vecinos no visitados, el algoritmo retrocede a lo largo del camino hasta encontrar un vértice con vecinos no visitados y continúa la exploración desde allí. El proceso se repite hasta que se visitan todos los vértices alcanzables desde el vértice origen.
-
+_ **Método Recursivo:**
+El método recursivo es una técnica de resolución de problemas en la que una función se llama a sí misma para descomponer el problema en subproblemas más pequeños hasta alcanzar una condición base.
+En el contexto de búsqueda de caminos en un laberinto, la recursión permite explorar rutas avanzando en una dirección hasta encontrar un punto sin salida y luego retrocediendo (backtracking) para probar alternativas. Aunque este método es intuitivo y fácil de implementar, puede ser ineficiente en términos de memoria y tiempo de ejecución debido a la acumulación de llamadas en la pila de ejecución.
+---
 ### **Descripción de la Solución**
 - **Lenguaje de Programación:** Java
 - **Interfaz gráfica:** Implementada con **JFrame** en Java.
@@ -147,23 +150,26 @@ adecuado dependiendo de las necesidades, como la velocidad o la optimización de
 ---
 
 ## **Conclusiones**
-Este proyecto es una aplicación en Java que permite la generación y resolución de laberintos utilizando distintos algoritmos. A través de una interfaz gráfica intuitiva, el usuario puede definir el tamaño del laberinto, seleccionar un punto de inicio y un punto de fin, y elegir entre varios métodos de resolución para encontrar el camino óptimo.
-
-El sistema cuenta con cuatro algoritmos de búsqueda: BFS (Breadth-First Search), DFS (Depth-First Search), Recursivo y Programación Dinámica (DP), cada uno con sus propias estrategias para explorar el laberinto. Además, la aplicación permite comparar el desempeño de estos métodos en términos de tiempo de ejecución y número de pasos requeridos.
-
+-Este proyecto es una aplicación en Java que permite la generación y resolución de laberintos utilizando distintos algoritmos. A través de una interfaz gráfica intuitiva, el usuario puede definir el tamaño del laberinto, seleccionar un punto de inicio y un punto de fin, y elegir entre varios métodos de resolución para encontrar el camino óptimo.
+-El sistema implementa cuatro algoritmos de búsqueda:
+-BFS (Breadth-First Search): Garantiza encontrar el camino más corto al explorar todas las opciones por niveles.
+-DFS (Depth-First Search): Prioriza la exploración en profundidad, lo que puede llevar a soluciones subóptimas en algunos casos.
+-Recursivo: Utiliza backtracking para explorar todas las posibles rutas, aunque puede ser menos eficiente en memoria y tiempo de ejecución.
+-Programación Dinámica (DP): Optimiza la solución dividiendo el problema en subproblemas y almacenando resultados intermedios.
+Además, la aplicación permite comparar el desempeño de estos métodos en términos de tiempo de ejecución y número de pasos requeridos.
 Visualmente, el laberinto se representa con una cuadrícula donde las celdas pueden ser caminos transitables, paredes que bloquean el paso o parte del recorrido encontrado por los algoritmos. Los colores ayudan a diferenciar los elementos del laberinto: el inicio y el fin se marcan de manera distintiva, los caminos explorados se resaltan en verde, y los nodos visitados en rojo.
-
-Esta herramienta no solo facilita la experimentación con distintos algoritmos de búsqueda, sino que también sirve como un recurso educativo para comprender cómo funcionan en la práctica.
+Esta herramienta no solo facilita la experimentación con distintos algoritmos de búsqueda, sino que también sirve como un recurso educativo para comprender su funcionamiento en la práctica.
 
 ---
 
 ## **Recomendaciones**
-- Emplear el funcionamiento del Modelo-Vista-Controlador en futuras aplicaciones.
-- Refactorizar el código para mejorar la legibilidad y eficiencia.
-- Implementar pruebas automatizadas para verificar la validez de los algoritmos.
-- Optimizar la interfaz gráfica para hacerla más intuitiva y flexible.
-- Explorar otros algoritmos como A* para mejorar la búsqueda de rutas óptimas.
-- Aplicar esta solución en otros ámbitos como la robótica y la inteligencia artificial.
+-Modularización del código: Implementar una estructura más clara basada en el patrón MVC (Modelo-Vista-Controlador) para mejorar la organización y mantenimiento del proyecto.
+-Refactorización del código: Optimizar la legibilidad y eficiencia del código eliminando redundancias y aplicando principios de diseño adecuados.
+-Pruebas automatizadas: Implementar pruebas unitarias para verificar la validez de los algoritmos y garantizar su correcto funcionamiento.
+-Mejoras en la interfaz gráfica: Hacerla más intuitiva y flexible, permitiendo una mejor experiencia de usuario.
+-Exploración de otros algoritmos: Incorporar técnicas avanzadas como A* o Dijkstra para mejorar la búsqueda de rutas óptimas.
+-Aplicación en otros ámbitos: Extender esta solución a áreas como robótica e inteligencia artificial para problemas de navegación y optimización.
+-Con estas mejoras, la aplicación puede ser más robusta, eficiente y útil tanto para fines educativos como para aplicaciones prácticas más avanzadas.
 
 ---
 
