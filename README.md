@@ -66,9 +66,9 @@ Desarrollar una aplicación que implemente un algoritmo para encontrar la ruta �
 - **Universidad:** Universidad Politécnica Salesiana
 - **Carrera:** Ingeniería en Ciencias de la Computación
 - **Asignatura:** Estructura de Datos
-- **Estudiante:** Jonnathan Parraga ([jparragar1@est.ups.edu.ec](mailto:jparragar1@est.ups.edu.ec))
-- **Estudiante:** María Verónica Cobos Arévalo ([mcobosa@est.ups.edu.ec] (mailto:mcobosa@est.ups.edu.ec))
-- **Estudiante:** Dayanna Carolina Fortmann Sánchez ([dfortmann@est.ups.edu.ec] (mailto:dfortmann@est.ups.edu.ec))
+- **Estudiante:** Jonnathan Parraga ([jparragar1@est.ups.edu.ec] (mailto:jparragar1@est.ups.edu.ec))
+- **Estudiante:** Jonnathan Parraga ([mcobosa@est.ups.edu.ec] (mailto:mcobosa@est.ups.edu.ec))
+- **Estudiante:** Jonnathan Parraga ([dfortmann@est.ups.edu.ec] (mailto:dfortmann@est.ups.edu.ec))
 - **Docente:** Ing. Pablo Torres
 
 ---
