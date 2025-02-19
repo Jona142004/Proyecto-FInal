@@ -169,20 +169,19 @@ Esta herramienta no solo facilita la experimentación con distintos algoritmos d
 
 ## **Recomendaciones (por estudiante)**
 
-### **Cobos Verónica: **
--Modularización del código: Implementar una estructura más clara basada en el patrón MVC (Modelo-Vista-Controlador) para mejorar la organización y mantenimiento del proyecto.
+### **Cobos Verónica:**
+- **Modularización del código:** Implementar una estructura más clara basada en el patrón **MVC** (Modelo-Vista-Controlador) para mejorar la organización y mantenimiento del proyecto.  
+- **Refactorización del código:** Optimizar la legibilidad y eficiencia del código eliminando redundancias y aplicando principios de diseño adecuados.  
 
--Refactorización del código: Optimizar la legibilidad y eficiencia del código eliminando redundancias y aplicando principios de diseño adecuados.
-### **Fortmann Carolina: **
--Pruebas automatizadas: Implementar pruebas unitarias para verificar la validez de los algoritmos y garantizar su correcto funcionamiento.
+### **Fortmann Carolina:**
+- **Pruebas automatizadas:** Implementar pruebas unitarias para verificar la validez de los algoritmos y garantizar su correcto funcionamiento.  
+- **Mejoras en la interfaz gráfica:** Hacerla más intuitiva y flexible, permitiendo una mejor experiencia de usuario.  
 
--Mejoras en la interfaz gráfica: Hacerla más intuitiva y flexible, permitiendo una mejor experiencia de usuario.
-### **Parraga Jonnathan: **
--Exploración de otros algoritmos: Incorporar técnicas avanzadas como A* o Dijkstra para mejorar la búsqueda de rutas óptimas.
+### **Parraga Jonnathan:**
+- **Exploración de otros algoritmos:** Incorporar técnicas avanzadas como **A*** o **Dijkstra** para mejorar la búsqueda de rutas óptimas.  
+- **Aplicación en otros ámbitos:** Extender esta solución a áreas como **robótica** e **inteligencia artificial** para problemas de navegación y optimización.  
 
--Aplicación en otros ámbitos: Extender esta solución a áreas como robótica e inteligencia artificial para problemas de navegación y optimización.
-
--Con estas mejoras, la aplicación puede ser más robusta, eficiente y útil tanto para fines educativos como para aplicaciones prácticas más avanzadas.
+Con estas mejoras, la aplicación puede ser más **robusta, eficiente y útil** tanto para fines educativos como para aplicaciones prácticas más avanzadas.
 
 ---
 
