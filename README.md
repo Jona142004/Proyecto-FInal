@@ -151,10 +151,15 @@ adecuado dependiendo de las necesidades, como la velocidad o la optimización de
 
 ## **Conclusiones**
 -Este proyecto es una aplicación en Java que permite la generación y resolución de laberintos utilizando distintos algoritmos. A través de una interfaz gráfica intuitiva, el usuario puede definir el tamaño del laberinto, seleccionar un punto de inicio y un punto de fin, y elegir entre varios métodos de resolución para encontrar el camino óptimo.
+
 -El sistema implementa cuatro algoritmos de búsqueda:
+
 -BFS (Breadth-First Search): Garantiza encontrar el camino más corto al explorar todas las opciones por niveles.
+
 -DFS (Depth-First Search): Prioriza la exploración en profundidad, lo que puede llevar a soluciones subóptimas en algunos casos.
+
 -Recursivo: Utiliza backtracking para explorar todas las posibles rutas, aunque puede ser menos eficiente en memoria y tiempo de ejecución.
+
 -Programación Dinámica (DP): Optimiza la solución dividiendo el problema en subproblemas y almacenando resultados intermedios.
 Además, la aplicación permite comparar el desempeño de estos métodos en términos de tiempo de ejecución y número de pasos requeridos.
 Visualmente, el laberinto se representa con una cuadrícula donde las celdas pueden ser caminos transitables, paredes que bloquean el paso o parte del recorrido encontrado por los algoritmos. Los colores ayudan a diferenciar los elementos del laberinto: el inicio y el fin se marcan de manera distintiva, los caminos explorados se resaltan en verde, y los nodos visitados en rojo.
@@ -163,12 +168,19 @@ Esta herramienta no solo facilita la experimentación con distintos algoritmos d
 ---
 
 ## **Recomendaciones**
+
 -Modularización del código: Implementar una estructura más clara basada en el patrón MVC (Modelo-Vista-Controlador) para mejorar la organización y mantenimiento del proyecto.
+
 -Refactorización del código: Optimizar la legibilidad y eficiencia del código eliminando redundancias y aplicando principios de diseño adecuados.
+
 -Pruebas automatizadas: Implementar pruebas unitarias para verificar la validez de los algoritmos y garantizar su correcto funcionamiento.
+
 -Mejoras en la interfaz gráfica: Hacerla más intuitiva y flexible, permitiendo una mejor experiencia de usuario.
+
 -Exploración de otros algoritmos: Incorporar técnicas avanzadas como A* o Dijkstra para mejorar la búsqueda de rutas óptimas.
+
 -Aplicación en otros ámbitos: Extender esta solución a áreas como robótica e inteligencia artificial para problemas de navegación y optimización.
+
 -Con estas mejoras, la aplicación puede ser más robusta, eficiente y útil tanto para fines educativos como para aplicaciones prácticas más avanzadas.
 
 ---
