@@ -66,9 +66,9 @@ Desarrollar una aplicación que implemente un algoritmo para encontrar la ruta �
 - **Universidad:** Universidad Politécnica Salesiana
 - **Carrera:** Ingeniería en Ciencias de la Computación
 - **Asignatura:** Estructura de Datos
-- **Estudiante:** Jonnathan Parraga ([jparragar1@est.ups.edu.ec] (mailto:jparragar1@est.ups.edu.ec))
-- **Estudiante:** Jonnathan Parraga ([mcobosa@est.ups.edu.ec] (mailto:mcobosa@est.ups.edu.ec))
-- **Estudiante:** Jonnathan Parraga ([dfortmann@est.ups.edu.ec] (mailto:dfortmann@est.ups.edu.ec))
+- **Estudiante:** Jonnathan Josue Parraga Riera ([jparragar1@est.ups.edu.ec] )
+- **Estudiante:** Maria Veronica Cobos Arevalo ([mcobosa@est.ups.edu.ec] )
+- **Estudiante:** Dayanna Carolina Fortman Sanchez ([dfortmann@est.ups.edu.ec] )
 - **Docente:** Ing. Pablo Torres
 
 ---
@@ -100,7 +100,38 @@ El proyecto consiste en la implementación de un algoritmo para encontrar la rut
 - **Carolina Fortmann:** Desarrollo de la Interfaz Gráfica, sus elementos y funcionamiento, implementación de DPController.
 
 ### **Capturas de Pantalla**
-_Agregar imágenes de la interfaz implementada_
+### **Interfaz**
+![Interfaz-imagen](https://github.com/Jona142004/Proyecto-FInal/blob/main/Interfaz.png)
+La imagen muestra una interfaz gráfica diseñada con elementos incluidos en un JFrame, como JButton, JPanel y JTextField, que contribuyen a una apariencia atractiva y estética para el usuario. Esta interfaz permite crear un laberinto de tamaño personalizado, donde el usuario puede definir el punto de inicio, el destino y los obstáculos.  
+
+En la parte inferior, se encuentran los botones que permiten seleccionar el tipo de recorrido para resolver el laberinto. Además, se incluyen opciones para realizar un recorrido más rápido, reiniciar el laberinto y comparar el tiempo estimado de ejecución de cada método de resolución.
+---
+### **Metodo "BFS"**
+![MetodoBFS-imagen](https://github.com/Jona142004/Proyecto-FInal/blob/main/bfs.png)
+El resultado visual del primer recorrido BFS (Breadth-First Search) muestra que el algoritmo exploró de manera uniforme desde el punto de inicio, llenando el espacio con nodos visitados (en rojo) hasta encontrar la ruta óptima. Es un claro ejemplo de cómo funciona este algoritmo, ya que explora los vértices de este laberinto en niveles, visitando todos los recuadros a una distancia 'd' del vértice origen antes de visitar los vértices a una distancia 'd+1'.
+---
+### **Metodo "DFS"**
+![MetodoDFS-imagen](https://github.com/Jona142004/Proyecto-FInal/blob/main/dfs.png)
+El resultado visual del recorrido DFS (Depth-First Search) muestra que el algoritmo exploró el laberinto de manera secuencial, avanzando por un camino hasta llegar a un punto sin salida antes de retroceder y probar una ruta diferente. Este método se refleja en el laberinto con un camino que serpentea a través de los recuadros hasta encontrar la salida. Es un claro ejemplo de cómo funciona este algoritmo, ya que explora los recuadros del laberinto en profundidad, priorizando la exploración de un camino completo antes de considerar alternativas. A diferencia de BFS, DFS no garantiza encontrar el camino más corto, pero es eficaz para explorar todas las posibles rutas en el laberinto.
+---
+### **Metodo "Recursivo"**
+![MetodoRecursivo-imagen](https://github.com/Jona142004/Proyecto-FInal/blob/main/Recursivo.png)
+El resultado visual del recorrido Recursivo muestra que el algoritmo exploró el laberinto utilizando una estrategia de retroceso (backtracking), avanzando por un camino hasta encontrar un punto sin salida y luego retrocediendo para probar rutas alternativas. Este método se refleja en el laberinto con un camino que avanza y retrocede, marcando los nodos visitados (con rojo) hasta encontrar la salida. Es un claro ejemplo de cómo funciona este algoritmo, ya que explora los vértices del laberinto de manera sistemática, priorizando la exploración de un camino completo antes de considerar alternativas. Al igual que DFS, el método recursivo no garantiza encontrar el camino más corto, pero es eficaz para explorar todas las posibles rutas en el laberinto, utilizando la recursión para manejar la exploración y el retroceso.
+---
+### **Metodo "Programacion Dinamica"**
+![MetodoDP-imagen](https://github.com/Jona142004/Proyecto-FInal/blob/main/DP.PNG)
+El resultado visual del recorrido utilizando Programación Dinámica (DP) muestra que el algoritmo optimizó la búsqueda de la ruta más eficiente a través del laberinto. A diferencia de los métodos anteriores, DP se enfoca en descomponer el problema en subproblemas más pequeños y almacenar los resultados intermedios para evitar cálculos redundantes. En el laberinto, esto se refleja en un camino que probablemente evita exploraciones innecesarias de manera más directa hacia la solución óptima.
+
+Este método garantiza encontrar la ruta más corta o más eficiente, ya que utiliza un enfoque sistemático para evaluar todas las posibles rutas y selecciona la mejor basándose en los resultados previamente calculados. La imagen puede mostrar un camino más directo y menos sinuoso en comparación con DFS o el método recursivo, destacando la eficiencia de la programación dinámica en la resolución de problemas de optimización como este laberinto.
+---
+### **Comparacion resultados**
+![Comparacion-imagen](https://github.com/Jona142004/Proyecto-FInal/blob/main/Comparaciontiempos.png)
+El botón "Comparar Métodos" en la imagen es una funcionalidad clave que permite al usuario analizar y contrastar los resultados de los diferentes algoritmos utilizados para resolver el laberinto. Al hacer clic en este botón, se muestra una comparación detallada de los métodos, como se indica a continuación:
+•	BFS (Breadth-First Search): Encontró el camino en 278 µs y 19 pasos. Este algoritmo es eficiente para encontrar la ruta más corta, ya que explora todos los nodos nivel por nivel.
+•	DFS (Depth-First Search): Encontró el camino en 144 µs y 55 pasos. Aunque fue más rápido en tiempo de ejecución, no garantiza la ruta más corta, ya que explora en profundidad antes de considerar alternativas.
+•	DP (Programación Dinámica): Encontró el camino en 18 µs y 19 pasos. Este método fue el más rápido y eficiente, ya que optimiza la búsqueda al evitar cálculos redundantes y garantiza la ruta más corta.
+•	Recursivo: Encontró el camino en 3868824 µs y 19 pasos. Aunque encontró la ruta más corta, fue significativamente más lento debido a la naturaleza de la recursión y la falta de optimización.
+El botón "Comparar Métodos" genera una visualización o un resumen que permite al usuario entender las diferencias en tiempo de ejecución, número de pasos y eficiencia entre los algoritmos. Esto es útil para evaluar cuál método es más adecuado dependiendo de las necesidades, como la velocidad o la optimización de la ruta.
 ---
 
 ## **Conclusiones**
