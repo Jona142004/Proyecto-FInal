@@ -84,7 +84,6 @@ public class MazeView extends JFrame {
         btnReiniciar.addActionListener(e -> reiniciarLaberinto());
         btnModoRapido.addActionListener(e -> cambiarModoRapido());
 
-        // Corrección de llamadas a los controladores
         btnBFS.addActionListener(e -> resolverLaberinto(new BFSController()));
         btnDFS.addActionListener(e -> resolverLaberinto(new DFSController()));
         btnDP.addActionListener(e -> resolverLaberinto(new DPController()));
@@ -98,10 +97,16 @@ public class MazeView extends JFrame {
             alto = Integer.parseInt(txtAlto.getText());
             if (ancho <= 2 || alto <= 2 || ancho > 50 || alto > 50) {
                 JOptionPane.showMessageDialog(this, "Ingrese valores entre 3 y 50", "Advertencia", JOptionPane.WARNING_MESSAGE);
+                txtAncho.setText("");
+                txtAlto.setText("");
+                txtAncho.requestFocus();
                 return;
             }
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "Ingrese valores entre 3 y 50", "Error", JOptionPane.ERROR_MESSAGE);
+            txtAncho.setText("");
+            txtAlto.setText("");
+            txtAncho.requestFocus();
             return;
         }
 
@@ -236,6 +241,21 @@ public class MazeView extends JFrame {
         }).start();
     }
     
+    private void limpiarRecorrido() {
+        if (gridButtons != null) {
+            for (int i = 0; i < gridButtons.length; i++) {
+                for (int j = 0; j < gridButtons[i].length; j++) {
+                    if (inicio != null && inicio.x == i && inicio.y == j) continue;
+                    if (fin != null && fin.x == i && fin.y == j) continue;
+    
+                    Color color = gridButtons[i][j].getBackground();
+                    if (color.equals(new Color(207, 55, 73)) || color.equals(new Color(53, 207, 87))) {
+                        gridButtons[i][j].setBackground(Color.WHITE);
+                    }
+                }
+            }
+        }
+    }
     
     // Método para convertir la matriz de botones en una matriz booleana
     private boolean[][] convertirGridABoolean(JButton[][] gridButtons) {
